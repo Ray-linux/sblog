@@ -17,12 +17,12 @@ app.use(bodyParser.json({extended : true}));
 app.use(bodyParser.urlencoded({extended : true}))
 app.use('/', Router);
 
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static("client/build"))
-}
+// if(process.env.NODE_ENV === 'production'){
+//     app.use(express.static("client/build"))
+// }
 
 
-const URL = process.env.MONGODB_URI || process.env.DB_URL
+const URL = process.env.k || process.env.DB_URL
 Connection(URL);
 
 app.listen(PORT, () => {
