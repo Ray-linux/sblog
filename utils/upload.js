@@ -4,9 +4,10 @@ import { GridFsStorage } from 'multer-gridfs-storage';
 
 dotenv.config();
 
+const URL = process.env.MONGODB_URI || process.env.DB_URL;
 const storage = new GridFsStorage({
     // url: `mongodb://localhost:27017/blog`,
-    url: process.env.DB_URL,
+    url: URL,
     options: { useNewUrlParser: true },
     file: (request, file) => {
         const match = ["image/png", "image/jpg"];
