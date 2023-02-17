@@ -22,7 +22,7 @@ app.use('/', Router);
 // }
 
 
-const URL = process.env.k || process.env.DB_URL
+const URL = process.env.MONGODB_URI || process.env.DB_URL
 Connection(URL);
 
 app.listen(PORT, () => {
