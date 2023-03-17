@@ -11,6 +11,9 @@ import upload from "../utils/upload.js"
 
 const router = express.Router();
 
+router.get("/", (req, res) => {
+    res.send("Hello World baba rahul!");
+  });
 router.post('/signup', signupUser);
 router.post('/login', loginUser);
 router.post('/file/upload', upload.single('file'), uploadImage);
